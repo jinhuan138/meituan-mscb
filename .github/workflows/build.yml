@@ -8,13 +8,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # ── Step 1: 连接内网 VPN ──────────────────────────────────────
+      # ── Step 1: 安装 openconnect（macOS 默认不带）────────────────
+      - name: Install openconnect
+        run: brew install openconnect
+
+      # ── Step 2: 连接内网 VPN ──────────────────────────────────────
       - name: Connect to FortiClient VPN
         uses: horellana/openconnect@v1.0.1
         with:
@@ -22,18 +26,18 @@ jobs:
           user: ${{ secrets.VPN_USER }}
           password: ${{ secrets.VPN_PASSWORD }}
 
-      # ── Step 2: 安装 Node.js ──────────────────────────────────────
+      # ── Step 3: 安装 Node.js ──────────────────────────────────────
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      # ── Step 3: 安装 mscb-cli（走内网 npm 源）─────────────────────
+      # ── Step 4: 安装 mscb-cli（走内网 npm 源）─────────────────────
       - name: Install mscb-cli
         run: |
           npm install -g @hfe/mscb-cli --registry=http://r.npm.sankuai.com
 
-      # ── Step 4: 验证安装 ──────────────────────────────────────────
+      # ── Step 5: 验证安装 ──────────────────────────────────────────
       - name: Verify mscb-cli installation
         run: |
           mscb-cli -v
