@@ -1,0 +1,40 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ── Step 1: 连接内网 VPN ──────────────────────────────────────
+      - name: Connect to FortiClient VPN
+        uses: horellana/openconnect@v1.0.1
+        with:
+          host: ${{ secrets.VPN_HOST }}
+          user: ${{ secrets.VPN_USER }}
+          password: ${{ secrets.VPN_PASSWORD }}
+
+      # ── Step 2: 安装 Node.js ──────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # ── Step 3: 安装 mscb-cli（走内网 npm 源）─────────────────────
+      - name: Install mscb-cli
+        run: |
+          npm install -g @hfe/mscb-cli --registry=http://r.npm.sankuai.com
+
+      # ── Step 4: 验证安装 ──────────────────────────────────────────
+      - name: Verify mscb-cli installation
+        run: |
+          mscb-cli -v
+          mscb-cli --help
