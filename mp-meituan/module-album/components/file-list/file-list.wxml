@@ -1,0 +1,1 @@
+<view class="file-list data-v-0003aad0"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="file_id"><file-item vue-id="{{'63208f4d-1-'+index}}" item="{{item}}" index="{{index}}" isEdit="{{isEdit}}" data-event-opts="{{[['^onCheckedChange',[['onCheckedChange']]]]}}" bind:onCheckedChange="__e" class="data-v-0003aad0" bind:__l="__l"></file-item></block></view>

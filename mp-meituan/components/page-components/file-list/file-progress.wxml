@@ -1,0 +1,1 @@
+<view class="{{['file-progress','data-v-b664c9e8',(mark==='error')?'error':'']}}"><view class="progress _div data-v-b664c9e8"><view class="progress-bar progress-bar-striped _div data-v-b664c9e8" style="{{'width:'+(percent+'%')+';'}}"></view></view><view class="percent _p data-v-b664c9e8">{{percent+"%"}}</view></view>

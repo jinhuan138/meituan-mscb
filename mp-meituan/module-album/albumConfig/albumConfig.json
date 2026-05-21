@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "照片冲印",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "print-config": "/components/print-components/print-config/print-config",
+    "my-button": "/components/page-components/my-button/my-button",
+    "app-bottom-bar": "/components/basic-components/app-bottom-bar/app-bottom-bar"
+  }
+}

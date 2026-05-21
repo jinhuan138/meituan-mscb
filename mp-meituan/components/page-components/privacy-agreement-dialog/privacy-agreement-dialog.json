@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "app-popup": "/components/basic-components/app-popup/app-popup"
+  }
+}

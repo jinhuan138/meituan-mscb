@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "app-bottom-bar": "/components/basic-components/app-bottom-bar/app-bottom-bar"
+  },
+  "component": true
+}

@@ -1,0 +1,1 @@
+<view><image src="{{$root.m0}}" mode="widthFix"></image></view>

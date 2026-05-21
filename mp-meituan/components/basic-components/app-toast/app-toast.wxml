@@ -1,0 +1,1 @@
+<view class="toast-wrap data-v-1d56dcfc" style="{{'opacity:'+(opacity)+';'+('display:'+(isVisible?'flex':'none')+';')}}"><view class="toast-text data-v-1d56dcfc">{{''+text+''}}</view></view>

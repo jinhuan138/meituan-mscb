@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的地址",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "app-dialog": "/components/basic-components/app-dialog-v2/app-dialog-v2"
+  }
+}

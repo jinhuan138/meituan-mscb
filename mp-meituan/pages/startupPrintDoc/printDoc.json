@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "文档打印",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "chooser-popup": "/components/page-components/chooser-popup/chooser-popup",
+    "print-setting": "/pages/startupPrintDoc/components/print-setting",
+    "print-bottom-bar": "/components/print-components/print-bottom-bar/print-bottom-bar_v2",
+    "add-file-btn": "/components/print-components/add-file-btn/add-file-btn",
+    "order-popup": "/components/print-components/order-popup/order-popup",
+    "file-list": "/components/page-components/file-list/file-list_v2",
+    "service-btn": "/components/page-components/service-btn/service-btn",
+    "empty-batch-tips": "/pages/startupPrintDoc/components/empty-batch-tips/empty-batch-tips",
+    "express-tips-dialog": "/pages/startupPrintDoc/components/express-tips-dialog/express-tips-dialog",
+    "print-mode-view": "/components/print-components/printModeView"
+  }
+}

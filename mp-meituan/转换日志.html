@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>转换结果</title>
+  <style>
+    .main {
+      width: 100%;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .header {
+      width: 100%;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      background-color: #ddd;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      overflow: hidden;
+
+      .item {
+        flex: 0.333;
+        height: 100%;
+        font-size: 24px;
+        font-weight: bolder;
+        cursor: pointer;
+
+        &.selected {
+          color: #fff;
+          overflow: hidden;
+          background-color: darkgoldenrod;
+        }
+      }
+    }
+
+    .content {
+      border-radius: 12px;
+      padding: 12px 0 12px 0;
+      box-sizing: border-box;
+    }
+    .panel-1,.panel-2,.panel-3 {
+      border: 1px solid #ddd;
+    }
+    .list-item {
+      background-color: #fff;
+      .title {
+        border-radius: 0;
+        background-color: #ddd;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">转换结果</h1>
+  <main class="main center">
+    <div class="container">
+      <section class="header">
+        <div onclick="onClick(1)" class="item item-1 center selected">JS</div>
+        <div onclick="onClick(2)" class="item item-2 center">WXML</div>
+        <div onclick="onClick(3)" class="item item-3 center">JSON</div>
+      </section>
+      <div class="content">
+        <section class="panel-1" style="display: block;">
+        </section>
+        <section class="panel-2" style="display: none;">
+        </section>
+        <section class="panel-3" style="display: none;">
+          <div class="list-item"  style="margin-bottom: 8px;">
+            <div class="title center" style="padding: 4px; min-height: 24px; font-size: 20px; color: #000;">
+              <div style="flex: 1;word-break: break-all;">D:\App\66in-meituan-miniprogram\dist\build\mp-meituan\app.json</div>
+              <div style="width: 50px; text-align: right;">4</div>
+            </div>
+              <div style="padding-left: 48px; font-size: 16px; height: 48px; line-height: 48px;">配置项     
+    subPackages  配置项暂不支持</div>
+              <div style="padding-left: 48px; font-size: 16px; height: 48px; line-height: 48px;">配置项     
+    __usePrivacyCheck__  配置项暂不支持</div>
+              <div style="padding-left: 48px; font-size: 16px; height: 48px; line-height: 48px;">配置项     
+    lazyCodeLoading  配置项暂不支持</div>
+              <div style="padding-left: 48px; font-size: 16px; height: 48px; line-height: 48px;">配置项     
+    requiredPrivateInfos  配置项暂不支持</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  var headers = {
+    1: document.querySelector('.item-1'),
+    2: document.querySelector('.item-2'),
+    3: document.querySelector('.item-3')
+  }
+  var panels = {
+    1: document.querySelector('.panel-1'),
+    2: document.querySelector('.panel-2'),
+    3: document.querySelector('.panel-3')
+  }
+  function reset() {
+    headers[1].classList.remove('selected')
+    headers[2].classList.remove('selected')
+    headers[3].classList.remove('selected')
+
+    panels[1].style.display = 'none'
+    panels[2].style.display = 'none'
+    panels[3].style.display = 'none'
+  }
+  function onClick(index) {
+    console.log(index)
+    reset()
+
+    headers[index].classList.add('selected')
+    panels[index].style.display = 'block'
+  }
+</script>
+
+</html>

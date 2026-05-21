@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "my-radio": "/components/page-components/my-radio/my-radio",
+    "deliver-chooser": "/components/print-components/deliver-chooser/deliver-chooser",
+    "express-tips": "/components/print-components/express-tips",
+    "print-bottom-bar": "/components/print-components/print-bottom-bar/print-bottom-bar_v2",
+    "print-mode-view": "/components/print-components/printModeView",
+    "weixin-service-code": "/components/page-components/wxServiceCode/wxServiceCode",
+    "deliver-change-popup": "/components/print-components/deliver-change-popup/deliver-change-popup"
+  }
+}

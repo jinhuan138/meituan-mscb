@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "app-empty": "/components/basic-components/app-empty/app-empty"
+  },
+  "component": true
+}

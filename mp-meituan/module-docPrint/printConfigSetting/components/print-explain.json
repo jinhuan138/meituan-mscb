@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "u-parse": "/node-modules/uview-ui/components/u-parse/u-parse",
+    "app-popup": "/components/basic-components/app-popup/app-popup"
+  },
+  "component": true
+}

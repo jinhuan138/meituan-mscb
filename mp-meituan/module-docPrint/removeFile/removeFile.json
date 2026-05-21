@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "批量删除",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-checkbox": "/node-modules/uview-ui/components/u-checkbox/u-checkbox"
+  }
+}

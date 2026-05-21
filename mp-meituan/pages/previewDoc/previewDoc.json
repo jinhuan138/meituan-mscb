@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "文档预览",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "app-loadmore": "/components/basic-components/app-loadmore/app-loadmore"
+  }
+}

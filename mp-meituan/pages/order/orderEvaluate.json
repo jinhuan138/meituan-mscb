@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "订单评价",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-rate": "/node-modules/uview-ui/components/u-rate/u-rate",
+    "textarea-block": "/components/page-components/textarea-block/textarea-block"
+  }
+}

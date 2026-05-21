@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "批量操作",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-checkbox": "/node-modules/uview-ui/components/u-checkbox/u-checkbox",
+    "file-list": "/module-album/components/file-list/file-list",
+    "app-bottom-bar": "/components/basic-components/app-bottom-bar/app-bottom-bar"
+  }
+}

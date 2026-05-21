@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "交易快照",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "textarea-block": "/components/page-components/textarea-block/textarea-block",
+    "app-bottom-bar": "/components/basic-components/app-bottom-bar/app-bottom-bar"
+  }
+}

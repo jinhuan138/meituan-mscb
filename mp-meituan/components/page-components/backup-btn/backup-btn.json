@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tooltip": "/components/page-components/tooltip/tooltip"
+  },
+  "component": true
+}

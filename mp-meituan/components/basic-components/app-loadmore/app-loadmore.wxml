@@ -1,0 +1,1 @@
+<view class="app-loadmore data-v-360c5eb3"><view class="container data-v-360c5eb3"><block wx:if="{{showIcon}}"><view class="icon data-v-360c5eb3"><image src="{{$root.m0}}" alt class="_img data-v-360c5eb3"></image></view></block><view class="text data-v-360c5eb3">{{loadText[status]}}</view></view></view>

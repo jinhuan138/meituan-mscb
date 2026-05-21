@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "upload-image-list": "/components/page-components/upload-image-list/upload-image-list"
+  }
+}

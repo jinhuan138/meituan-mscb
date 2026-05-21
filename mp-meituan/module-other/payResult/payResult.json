@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "付款成功",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "activity-popup": "/module-other/payResult/components/activity-popup",
+    "backup-dialog": "/module-other/payResult/components/backup-dialog",
+    "backup-btn": "/components/page-components/backup-btn/backup-btn"
+  }
+}

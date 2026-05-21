@@ -1,0 +1,1 @@
+<view class="file-list data-v-6152d4d7"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="file_id"><file-item class="file-item data-v-6152d4d7" vue-id="{{'372a1806-1-'+index}}" pageName="{{pageName}}" toolbar="{{toolbar}}" item="{{item}}" index="{{index}}" type="{{type}}" batch_id="{{batch_id}}" bind:__l="__l"></file-item></block></view>

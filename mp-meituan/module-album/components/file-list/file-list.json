@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "file-item": "/module-album/components/file-item/file-item"
+  }
+}

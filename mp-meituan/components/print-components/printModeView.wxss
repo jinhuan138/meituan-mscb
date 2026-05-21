@@ -1,0 +1,1 @@
+.list .item.data-v-53b2fd92{margin-top:32rpx;display:flex;justify-content:space-between}.list .item .label.data-v-53b2fd92,.list .item .value.data-v-53b2fd92{font-size:24rpx}.list .item .label.data-v-53b2fd92{color:var(--text-color-secondary)}.list .item .value.data-v-53b2fd92{flex:1;text-align:right}

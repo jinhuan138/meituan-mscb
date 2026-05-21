@@ -1,0 +1,96 @@
+{
+  "pages": [
+    "pages/startupPrintDoc/printDoc",
+    "pages/startupPage/startupPage",
+    "pages/printPrice/printPrice",
+    "pages/localDoc/localDoc",
+    "pages/previewDoc/previewDoc",
+    "pages/order/orderDetail",
+    "pages/bannerLink/bannerLink",
+    "pages/previewDetailImage/previewDetailImage",
+    "pages/localCompress/localCompress",
+    "pages/localPic/localPic",
+    "pages/order/orderEvaluate",
+    "pages/test/test"
+  ],
+  "subPackages": [
+    {
+      "root": "module-docPrint",
+      "pages": [
+        "photoUpload/photoUpload",
+        "removeFile/removeFile",
+        "printConfigSetting/printConfigSetting",
+        "batchPrint/batch",
+        "coverPrint/coverPrint",
+        "baiduNetdisk/baiduNetdisk",
+        "baiduNetdiskAuth/baiduNetdiskAuth"
+      ]
+    },
+    {
+      "root": "module-mine",
+      "pages": [
+        "address/address",
+        "editAddress/editAddress",
+        "invoice/invoice",
+        "invoiceForm/invoiceForm",
+        "invoiceDetail/invoiceDetail",
+        "feedback/feedback",
+        "invoiceDetailList/invoiceDetailList"
+      ]
+    },
+    {
+      "root": "module-other",
+      "pages": [
+        "payResult/payResult",
+        "printPrice/printPrice",
+        "appDocPrintDetail/appDocPrintDetail",
+        "buyPaper/buyPaper",
+        "onlineService/onlineService",
+        "fileDescription/fileDescription",
+        "privacytAgreement/privacytAgreement",
+        "userAgreement/userAgreement",
+        "compressList/compressList",
+        "appOther/appOther"
+      ]
+    },
+    {
+      "root": "module-album",
+      "pages": [
+        "albumConfig/albumConfig",
+        "albumList/albumList",
+        "batchOperation/batchOperation"
+      ]
+    },
+    {
+      "root": "module-order",
+      "pages": [
+        "afterSale/afterSale",
+        "afterSaleDetail/afterSaleDetail",
+        "tradeSnapshot/tradeSnapshot"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#F8F8F8"
+  },
+  "__usePrivacyCheck__": true,
+  "lazyCodeLoading": "requiredComponents",
+  "requiredPrivateInfos": [
+    "chooseLocation"
+  ],
+  "usingComponents": {
+    "app-layout": "/components/basic-components/app-layout/app-layout",
+    "app-image": "/components/basic-components/app-image/app-image",
+    "basic-image": "/components/page-components/basic-image/basic-image",
+    "app-iconfont": "/components/basic-components/app-iconfont/app-iconfont",
+    "app-dialog": "/components/basic-components/app-dialog-v2/app-dialog-v2",
+    "app-empty": "/components/basic-components/app-empty/app-empty",
+    "app-image-popup": "/components/basic-components/app-image-popup/app-image-popup",
+    "app-bottom-bar": "/components/basic-components/app-bottom-bar/app-bottom-bar",
+    "service-btn": "/components/page-components/service-btn/service-btn",
+    "weixin-service-code": "/components/page-components/wxServiceCode/wxServiceCode"
+  }
+}

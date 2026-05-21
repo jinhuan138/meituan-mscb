@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-checkbox": "/node-modules/uview-ui/components/u-checkbox/u-checkbox",
+    "app-popup-bottom": "/components/basic-components/app-popup-bottom/app-popup-bottom",
+    "textarea-block": "/components/page-components/textarea-block/textarea-block"
+  }
+}

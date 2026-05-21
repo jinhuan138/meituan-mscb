@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "app-popup": "/components/basic-components/app-popup/app-popup"
+  },
+  "component": true
+}

@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "打印设置",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "my-button": "/components/page-components/my-button/my-button",
+    "app-stepper": "/components/basic-components/app-stepper/app-stepper_v2",
+    "custom-input": "/module-docPrint/printConfigSetting/components/custom-input",
+    "print-explain": "/module-docPrint/printConfigSetting/components/print-explain",
+    "chooser-popup": "/components/page-components/chooser-popup/chooser-popup",
+    "app-select": "/components/basic-components/app-select/app-select",
+    "app-bottom-bar": "/components/basic-components/app-bottom-bar/app-bottom-bar",
+    "service-btn": "/components/page-components/service-btn/service-btn",
+    "config-error-files": "/components/print-components/config-error-files/config-error-files",
+    "page-range-selector": "/module-docPrint/printConfigSetting/components/page-range-selector"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "打印图片",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "chooser-popup": "/components/page-components/chooser-popup/chooser-popup",
+    "empty": "/module-docPrint/photoUpload/empty",
+    "print-bottom-bar": "/components/print-components/print-bottom-bar/print-bottom-bar",
+    "order-popup": "/components/print-components/order-popup/order-popup",
+    "add-file-btn": "/components/print-components/add-file-btn/add-file-btn",
+    "file-list": "/components/page-components/file-list/file-list",
+    "service-btn": "/components/page-components/service-btn/service-btn",
+    "empty-batch-tips": "/module-docPrint/components/empty-batch-tips/empty-batch-tips",
+    "express-tips-dialog": "/module-docPrint/components/express-tips-dialog/express-tips-dialog"
+  }
+}

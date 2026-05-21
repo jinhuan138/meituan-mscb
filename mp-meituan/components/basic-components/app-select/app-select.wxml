@@ -1,0 +1,1 @@
+<view><u-select vue-id="62b38c96-1" list="{{list}}" default-value="{{defaultValue}}" value="{{visible}}" data-event-opts="{{[['^confirm',[['confirm']]],['^input',[['__set_model',['','visible','$event',[]]]]]]}}" bind:confirm="__e" bind:input="__e" bind:__l="__l"></u-select></view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "编辑收货地址",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-checkbox": "/node-modules/uview-ui/components/u-checkbox/u-checkbox"
+  }
+}

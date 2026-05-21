@@ -1,0 +1,1 @@
+<app-layout vue-id="d13edfb4-1" bind:__l="__l" vue-slots="{{['default']}}"><sy-startup-page vue-id="{{('d13edfb4-2')+','+('d13edfb4-1')}}" source="{{source}}" pageParams="{{pageParams}}" isMiniProgram="{{true}}" bind:__l="__l"></sy-startup-page></app-layout>

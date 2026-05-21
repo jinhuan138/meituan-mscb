@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "print-property": "/components/print-components/print-property/print-property",
+    "express-popup": "/pages/order/components/express-popup/express-popup",
+    "order-refund": "/pages/order/components/order-refund"
+  }
+}

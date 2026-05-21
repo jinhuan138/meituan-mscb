@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "app-dialog": "/components/basic-components/app-dialog/app-dialog"
+  },
+  "component": true
+}

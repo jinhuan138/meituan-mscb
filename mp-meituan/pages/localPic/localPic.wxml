@@ -1,0 +1,1 @@
+<view><web-view src="{{url}}" data-event-opts="{{[['message',[['onMessage',['$event']]]]]}}" bindmessage="__e"></web-view></view>

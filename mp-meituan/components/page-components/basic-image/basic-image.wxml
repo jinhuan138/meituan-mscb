@@ -1,0 +1,1 @@
+<block wx:if="{{baseUrl&&src}}"><image src="{{baseUrl+src}}" mode="{{mode}}" lazy-load="{{lazyLoad}}" class="data-v-1f1b966e"></image></block>

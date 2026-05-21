@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal",
+    "online-service-dialog": "/components/page-components/online-service-dialog/online-service-dialog",
+    "weixin-service-code": "/components/page-components/wxServiceCode/wxServiceCode"
+  }
+}

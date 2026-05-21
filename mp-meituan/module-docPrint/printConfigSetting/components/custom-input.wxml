@@ -1,0 +1,1 @@
+<view class="input data-v-04d03f9e"><input type="number" data-event-opts="{{[['blur',[['onBlur',['$event']]]],['input',[['__set_model',['','inputValue','$event',[]]]]]]}}" value="{{inputValue}}" bindblur="__e" bindinput="__e" class="data-v-04d03f9e"/></view>

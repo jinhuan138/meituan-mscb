@@ -1,0 +1,1 @@
+<view class="app-popup data-v-5d646507" catchtouchmove="{{true}}"><u-popup vue-id="79043158-1" mode="center" border-radius="{{borderRadius}}" mask="{{mask}}" data-ref="popup" data-event-opts="{{[['^close',[['$emit',['close']]]]]}}" bind:close="__e" class="data-v-5d646507 vue-ref" bind:__l="__l" vue-slots="{{['default']}}"><slot></slot></u-popup></view>

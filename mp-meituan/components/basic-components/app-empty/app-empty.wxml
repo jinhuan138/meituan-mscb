@@ -1,0 +1,1 @@
+<view class="app-empty data-v-8e2f57f2"><view class="empty-img data-v-8e2f57f2"><image src="{{_imgUrl}}" class="data-v-8e2f57f2"></image></view><block wx:if="{{$slots.text}}"><slot name="text"></slot></block><block wx:else><view class="text data-v-8e2f57f2">{{''+text+''}}</view></block><slot></slot></view>

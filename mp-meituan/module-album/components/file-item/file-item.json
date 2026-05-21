@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-checkbox": "/node-modules/uview-ui/components/u-checkbox/u-checkbox",
+    "app-stepper": "/components/basic-components/app-stepper/app-stepper"
+  }
+}

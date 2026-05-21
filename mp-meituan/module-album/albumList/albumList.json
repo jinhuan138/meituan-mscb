@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "照片冲印",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "file-list": "/module-album/components/file-list/file-list",
+    "order-popup": "/components/print-components/order-popup/order-popup",
+    "print-bottom-bar": "/components/print-components/print-bottom-bar/print-bottom-bar",
+    "chooser-popup": "/components/page-components/chooser-popup/chooser-popup",
+    "empty": "/module-album/albumList/empty",
+    "list-progress": "/module-album/components/progress"
+  }
+}

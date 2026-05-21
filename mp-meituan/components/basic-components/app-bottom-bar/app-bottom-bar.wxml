@@ -1,0 +1,1 @@
+<view hidden="{{!(visible)}}" class="bottom-bar data-v-516c890f" style="{{'z-index:'+(zIndex)+';'}}"><slot></slot></view>
