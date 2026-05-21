@@ -20,11 +20,15 @@ jobs:
 
       # ── Step 2: 连接内网 VPN ──────────────────────────────────────
       - name: Connect to FortiClient VPN
-        uses: horellana/openconnect@v1.0.1
-        with:
-          host: ${{ secrets.VPN_HOST }}
-          user: ${{ secrets.VPN_USER }}
-          password: ${{ secrets.VPN_PASSWORD }}
+        run: |
+          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect \
+            --user=${{ secrets.VPN_USER }} \
+            --passwd-on-stdin \
+            --background \
+            --no-dtls \
+            ${{ secrets.VPN_HOST }}
+          sleep 5
+          echo "VPN connected"
 
       # ── Step 3: 安装 Node.js ──────────────────────────────────────
       - name: Setup Node.js
