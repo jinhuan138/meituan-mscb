@@ -24,10 +24,11 @@ jobs:
           echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect \
             --user=${{ secrets.VPN_USER }} \
             --passwd-on-stdin \
+            --authgroup=duanxin \
             --background \
             --no-dtls \
             ${{ secrets.VPN_HOST }}
-          sleep 5
+          sleep 8
           echo "VPN connected"
 
       # ── Step 3: 安装 Node.js ──────────────────────────────────────
