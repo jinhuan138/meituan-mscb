@@ -14,22 +14,35 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # ── Step 1: 安装 openconnect（macOS 默认不带）────────────────
-      - name: Install openconnect
-        run: brew install openconnect
+      # ── Step 1: 安装 openconnect & expect（macOS 默认不带）────────
+      - name: Install openconnect & expect
+        run: brew install openconnect expect
 
-      # ── Step 2: 连接内网 VPN ──────────────────────────────────────
+      # ── Step 2: 连接内网 VPN（自动处理短信验证码）────────────────
       - name: Connect to FortiClient VPN
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
-          echo "${{ secrets.VPN_PASSWORD }}" | sudo openconnect \
-            --user=${{ secrets.VPN_USER }} \
-            --passwd-on-stdin \
-            --authgroup=duanxin \
-            --background \
-            --no-dtls \
-            ${{ secrets.VPN_HOST }}
-          sleep 8
-          echo "VPN connected"
+          chmod +x .github/scripts/poll-sms.sh
+
+          # 后台启动 VPN（expect 脚本自动处理密码 + 短信验证码）
+          /usr/bin/expect .github/scripts/vpn-connect.exp \
+            "${{ secrets.VPN_HOST }}" \
+            "${{ secrets.VPN_USER }}" \
+            "${{ secrets.VPN_PASSWORD }}" \
+            ".github/scripts/poll-sms.sh" \
+            "duanxin" &
+
+          # 等待 VPN 隧道建立（最多90秒）
+          echo "等待 VPN 建立..."
+          for i in $(seq 1 18); do
+            if ping -c 1 -W 2 r.npm.sankuai.com >/dev/null 2>&1; then
+              echo "VPN 已连接！"
+              break
+            fi
+            echo "等待中... ($i/18)"
+            sleep 5
+          done
 
       # ── Step 3: 安装 Node.js ──────────────────────────────────────
       - name: Setup Node.js

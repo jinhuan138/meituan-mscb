@@ -1,0 +1,62 @@
+#!/usr/bin/expect -f
+# VPN 自动登录脚本，支持短信验证码自动输入
+# 用法: expect vpn-connect.exp <host> <user> <password> <poll-script-path> <authgroup>
+
+set vpn_host  [lindex $argv 0]
+set vpn_user  [lindex $argv 1]
+set vpn_pass  [lindex $argv 2]
+set poll_sh   [lindex $argv 3]
+set authgroup [lindex $argv 4]
+
+set timeout 300
+
+puts "\[VPN\] 正在连接 $vpn_host (group: $authgroup)..."
+
+spawn sudo openconnect \
+    --user=$vpn_user \
+    --authgroup=$authgroup \
+    --no-dtls \
+    $vpn_host
+
+expect {
+    # 密码提示
+    -re {[Pp]assword[: ]+} {
+        puts "\[VPN\] 输入密码..."
+        send "$vpn_pass\r"
+        exp_continue
+    }
+
+    # 短信验证码提示（兼容多种提示文案）
+    -re {(security.?code|verification.?code|动态密码|短信验证码|SMS|sms|Passcode)} {
+        puts "\[VPN\] 检测到短信验证码请求，等待短信..."
+        set code [exec bash $poll_sh]
+        puts "\[VPN\] 输入验证码..."
+        send "$code\r"
+        exp_continue
+    }
+
+    # 连接成功标志
+    -re {(Tunnel is up|Connected to HTTPS|VPN session established|Connected SSL)} {
+        puts "\[VPN\] VPN 连接成功！"
+    }
+
+    # 错误处理
+    -re {(error|Error|ERROR|failed|Failed)} {
+        puts "\[VPN\] 连接失败！"
+        exit 1
+    }
+
+    timeout {
+        puts "\[VPN\] 连接超时！"
+        exit 1
+    }
+
+    eof {
+        puts "\[VPN\] 连接意外断开"
+        exit 1
+    }
+}
+
+# 保持 VPN 隧道活跃（等待工作流其余步骤完成）
+puts "\[VPN\] 保持连接中，等待工作流完成..."
+vwait forever
