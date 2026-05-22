@@ -8,7 +8,10 @@ set vpn_pass  [lindex $argv 2]
 set poll_sh   [lindex $argv 3]
 set authgroup [lindex $argv 4]
 
-set timeout 300
+set timeout 120
+
+# 开启详细日志，方便排查提示文案
+log_user 1
 
 puts "\[VPN\] 正在连接 $vpn_host (group: $authgroup)..."
 
@@ -19,35 +22,36 @@ spawn sudo openconnect \
     $vpn_host
 
 expect {
-    # 密码提示
-    -re {[Pp]assword[: ]+} {
+    # 用户名提示
+    -re {[Uu]sername[: ]+|[Ll]ogin[: ]+} {
+        puts "\[VPN\] 输入用户名..."
+        send "$vpn_user\r"
+        exp_continue
+    }
+
+    # 密码提示（兼容各种格式）
+    -re {[Pp]assword[: ]+|[Pp]asswd[: ]+} {
         puts "\[VPN\] 输入密码..."
         send "$vpn_pass\r"
         exp_continue
     }
 
     # 短信验证码提示（兼容多种提示文案）
-    -re {(security.?code|verification.?code|动态密码|短信验证码|SMS|sms|Passcode)} {
-        puts "\[VPN\] 检测到短信验证码请求，等待短信..."
+    -re {[Ss]ecurity.?[Cc]ode|[Vv]erification.?[Cc]ode|动态密码|短信验证码|[Pp]asscode|[Tt]oken|[Cc]ode:} {
+        puts "\[VPN\] 检测到短信验证码请求，等待短信转发..."
         set code [exec bash $poll_sh]
-        puts "\[VPN\] 输入验证码..."
+        puts "\[VPN\] 输入验证码: [string range $code 0 1]****"
         send "$code\r"
         exp_continue
     }
 
     # 连接成功标志
-    -re {(Tunnel is up|Connected to HTTPS|VPN session established|Connected SSL)} {
+    -re {Tunnel is up|Connected to HTTPS|VPN session established|Connected SSL|Got CONNECT response} {
         puts "\[VPN\] VPN 连接成功！"
     }
 
-    # 错误处理
-    -re {(error|Error|ERROR|failed|Failed)} {
-        puts "\[VPN\] 连接失败！"
-        exit 1
-    }
-
     timeout {
-        puts "\[VPN\] 连接超时！"
+        puts "\[VPN\] 连接超时！请检查上方日志确认实际提示文案"
         exit 1
     }
 
