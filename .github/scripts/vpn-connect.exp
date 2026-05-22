@@ -22,6 +22,17 @@ spawn sudo openconnect \
     $vpn_host
 
 expect {
+    # SSL 握手完成 —— 只是第一步，继续等待登录表单
+    -re {Connected to HTTPS} {
+        puts "\[VPN\] SSL 连接建立，等待登录表单..."
+        exp_continue
+    }
+
+    # HTTP 跳转 / 连接过程等待
+    -re {(302|Object Moved|index\.html|webvpn)} {
+        exp_continue
+    }
+
     # 用户名提示
     -re {[Uu]sername[: ]+|[Ll]ogin[: ]+} {
         puts "\[VPN\] 输入用户名..."
@@ -45,9 +56,9 @@ expect {
         exp_continue
     }
 
-    # 连接成功标志
-    -re {Tunnel is up|Connected to HTTPS|VPN session established|Connected SSL|Got CONNECT response} {
-        puts "\[VPN\] VPN 连接成功！"
+    # 隧道真正建立（登录完成后的真正成功标志）
+    -re {Tunnel is up|CSTP connected|Got CONNECT response: HTTP.* 200|Connected tun} {
+        puts "\[VPN\] VPN 隧道已建立！"
     }
 
     timeout {
